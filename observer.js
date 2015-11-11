@@ -131,7 +131,7 @@
             }
         }
 
-        window.Observer = {
+        window.ObjectObserver = {
             observe: observe,
             unobserve: unobserve
         };
