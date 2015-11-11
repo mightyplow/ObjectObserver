@@ -21,9 +21,7 @@ var f = {
 
     cb = function (newVal) {
         console.log(newVal);
-    },
-
-    i = document.getElementById('foo');
+    };
 
 Observer.observe(f, 'foo', cb);
 
