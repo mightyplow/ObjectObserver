@@ -2,9 +2,9 @@
 small js library to watch objects for changes
 
 # What gets created by this script
-The script creates an object on the window with the name 'Observer'.
+The script creates an object on the window with the name 'ObjectObserver'.
 
-# The interface of the 'Observer' object
+# The interface of the 'ObjectObserver' object
 - methods
     - observe (object, property, callback)
         - listens for changes of the given property on the given object and invokes the callback with the new value, if the value gets set
@@ -21,17 +21,19 @@ var f = {
 
     cb = function (newVal) {
         console.log(newVal);
-    };
+    },
 
-Observer.observe(f, 'foo', cb);
+    i = document.getElementById('foo');
+
+ObjectObserver.observe(f, 'foo', cb);
 
 console.log(f.foo) // >> foo
 f.foo = 'bar'; // >> bar
 
-Observer.unobserve(f, 'foo', cb);
+ObjectObserver.unobserve(f, 'foo', cb);
 f.foo = 'baz'; // >> [no output]
 ```
 
 # Notes
 - when deleting an object property which gets observed, the observing of that property gets lost
-    - to reenable observing, you have to call Observer.observe() again
+    - to reenable observing, you have to call ObjectObserver.observe() again
