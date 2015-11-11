@@ -1,4 +1,4 @@
-# Observable
+# ObjectObserver
 small js library to watch objects for changes
 
 # What gets created by this script
