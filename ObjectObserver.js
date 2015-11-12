@@ -51,7 +51,8 @@
             var _val,
                 _initialValue = obj[prop],
                 _initialPropertyDescriptor = Object.getOwnPropertyDescriptor(obj, prop),
-                _initialSetter = _initialPropertyDescriptor && _initialPropertyDescriptor.set;
+                _initialSetter = _initialPropertyDescriptor && _initialPropertyDescriptor.set,
+                _initialGetter = _initialPropertyDescriptor && _initialPropertyDescriptor.get;
 
             Object.defineProperty(obj, prop, {
                 set: function (val) {
@@ -66,7 +67,7 @@
                     }
                 },
                 get: function () {
-                    return _val;
+                    return _initialGetter && _initialGetter() || _val;
                 }
             });
 
