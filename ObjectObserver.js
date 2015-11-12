@@ -1,4 +1,6 @@
 (function (window, Object) {
+    'use strict';
+
     var simpleMap = (function () {
         var _simpleMapPrototype = {
             size: function () {
